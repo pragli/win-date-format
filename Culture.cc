@@ -31,7 +31,7 @@ NAN_METHOD(getDateFormat) {
   Isolate* isolate = info.GetIsolate();
 
   const char * shortCultureFormat = getDateFormatM();
-  info.GetReturnValue().Set(v8::String::NewFromUtf8(isolate, shortCultureFormat));
+  info.GetReturnValue().Set(Nan::New<v8::String>(shortCultureFormat).ToLocalChecked());
 
   freeStr(shortCultureFormat);
 }
