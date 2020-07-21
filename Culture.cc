@@ -37,8 +37,7 @@ NAN_METHOD(getDateFormat) {
 }
 
 NAN_MODULE_INIT(InitAll) {
-  Nan::Set(target, Nan::New("getDateFormat").ToLocalChecked(),
-    Nan::GetFunction(Nan::New<v8::FunctionTemplate>(getDateFormat)).ToLocalChecked());
+  NAN_EXPORT(target, getDateFormat);
 }
 
 NODE_MODULE(culture, InitAll)
