@@ -1,6 +1,6 @@
 {
   "name": "@pragli/win-date-format",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "gypfile": true,
   "license": "MIT",
   "dependencies": {
@@ -8,7 +8,9 @@
   },
   "main": "index.js",
   "scripts": {
-    "install": "node-gyp rebuild"
+    "configure": "node-gyp configure",
+    "prepare": "node-gyp build",
+    "build": "node-gyp build"
   },
   "description": "Tiny native NodeJS add-on to determine the short date format on Windows",
   "repository": {
@@ -23,6 +25,5 @@
     "url": "https://github.com/pragli/win-date-format/issues"
   },
   "homepage": "https://github.com/pragli/win-date-format#readme",
-  "main": "test.js",
   "devDependencies": {}
 }
