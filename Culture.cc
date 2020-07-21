@@ -1,4 +1,5 @@
 #include <node.h>
+#include <nan.h>
 #include <v8.h>
 
 #pragma managed
@@ -26,17 +27,18 @@ using v8::Object;
 using v8::String;
 using v8::Value;
 
-void getDateFormat(const FunctionCallbackInfo<Value>& args) {
-  Isolate* isolate = args.GetIsolate();
+NAN_METHOD(getDateFormat) {
+  Isolate* isolate = info.GetIsolate();
 
   const char * shortCultureFormat = getDateFormatM();
-  args.GetReturnValue().Set(v8::String::NewFromUtf8(isolate, shortCultureFormat));
+  info.GetReturnValue().Set(v8::String::NewFromUtf8(isolate, shortCultureFormat));
 
   freeStr(shortCultureFormat);
 }
 
-void init(Local<v8::Object> exports) {
-  NODE_SET_METHOD(exports, "getDateFormat", getDateFormat);
+NAN_MODULE_INIT(InitAll) {
+  Nan::Set(target, Nan::New("getDateFormat").ToLocalChecked(),
+    Nan::GetFunction(Nan::New<v8::FunctionTemplate>(getDateFormat)).ToLocalChecked());
 }
 
-NODE_MODULE(culture, init)
+NODE_MODULE(culture, InitAll)
