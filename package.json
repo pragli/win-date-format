@@ -1,8 +1,28 @@
 {
-  "name": "culture",
-  "version": "1.0.0",
+  "name": "@pragli/win-date-format",
+  "version": "0.0.1",
   "gypfile": true,
+  "license": "MIT",
   "dependencies": {
     "bindings": "^1.5.0"
-  }
+  },
+  "main": "index.js",
+  "scripts": {
+    "install": "node-gyp rebuild"
+  },
+  "description": "Tiny native NodeJS add-on to determine the short date format on Windows",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pragli/win-date-format.git"
+  },
+  "keywords": [
+    "date"
+  ],
+  "author": "Vivek Nair",
+  "bugs": {
+    "url": "https://github.com/pragli/win-date-format/issues"
+  },
+  "homepage": "https://github.com/pragli/win-date-format#readme",
+  "main": "test.js",
+  "devDependencies": {}
 }
