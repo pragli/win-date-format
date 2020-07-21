@@ -1,0 +1,8 @@
+{
+  "name": "culture",
+  "version": "1.0.0",
+  "gypfile": true,
+  "dependencies": {
+    "bindings": "^1.5.0"
+  }
+}
